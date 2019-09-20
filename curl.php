@@ -1,0 +1,21 @@
+<?php
+
+$url='https://xiaochuang.dabai0220.club/test/login';
+$data=[
+    'name'=>'123',
+    'pwd'=>md5('fgfgfdgfdgfd')
+];
+$data=http_build_query($data);
+//print_r($data);
+$cn=curl_init();
+curl_setopt($cn,CURLOPT_URL,$url);
+curl_setopt($cn,CURLOPT_POST,true);
+curl_setopt($cn,CURLOPT_POSTFIELDS,$data);
+curl_setopt($cn,CURLOPT_HEADER,false);
+curl_setopt($cn,CURLOPT_RETURNTRANSFER,false);
+curl_setopt($cn,CURLOPT_FOLLOWLOCATION,false);
+curl_setopt($cn,CURLOPT_SSL_VERIFYHOST,false);
+curl_setopt($cn,CURLOPT_SSL_VERIFYPEER,false); 
+$curl=curl_exec($cn);
+curl_close($cn);
+var_dump($curl);

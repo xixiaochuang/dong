@@ -7,4 +7,6 @@ if($_COOKIE['user']){
 }else{
     echo 123213;
 }
+
+echo 123123;
 //echo 21321;
